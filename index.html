@@ -20,11 +20,14 @@
       </p>
 
       <div class="form">
-        <input type="text" placeholder="Your Name" />
-        <input type="date" />
+            <input type="text" id="nameInput" placeholder="Your Name" />
+            <p class="error" id="nameError"></p>
 
-        <button>Reveal My Reading</button>
+            <input type="date" id="birthInput" />
+
+            <button id="submitBtn">Reveal My Reading</button>
       </div>
+
 
       <div class="stats">
         ✨ 12,483 readings generated
@@ -34,5 +37,6 @@
 
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>

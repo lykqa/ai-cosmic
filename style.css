@@ -132,3 +132,26 @@ button:hover {
   font-size: 0.8rem;
   opacity: 0.6;
 }
+
+
+/* error text */
+.error {
+  font-size: 0.8rem;
+  color: #ff6b6b;
+  text-align: left;
+  margin-top: -8px;
+  margin-bottom: 5px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* show error */
+.error.active {
+  opacity: 1;
+}
+
+/* input error state */
+input.error-input {
+  border-color: #ff6b6b !important;
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.4);
+}

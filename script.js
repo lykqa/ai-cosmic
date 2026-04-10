@@ -1,69 +1,40 @@
-const nameInput = document.getElementById('nameInput');
-const greeting = document.getElementById('greeting');
-const wrapper = document.getElementById('input-wrapper');
-const birthday = document.getElementById('birthday');
+const nameInput = document.getElementById("nameInput");
+const nameError = document.getElementById("nameError");
+const submitBtn = document.getElementById("submitBtn");
 
-nameInput.addEventListener('keypress', function (e) {
-    // Check if the pressed key is 'Enter'
-    if (e.key === 'Enter') {
-        const userName = nameInput.value.trim();
+submitBtn.addEventListener("click", handleSubmit);
 
-        // Only proceed if the user actually typed something -- validate if the name is valid
-        if (userName !== "") {
-            // 1. Set the new text
-            greeting.textContent = `Hi ${userName}!`;
-            birthday.style.display = 'block'; 
-            
-            // 2. Hide or remove the input field
-            wrapper.style.display = 'none'; 
-            
-            // 3. Optional: Add a class for a fade-in effect if you have CSS for it
-            greeting.classList.add('fade-in');
-        }
-    }
-});
+function handleSubmit() {
+  const name = nameInput.value.trim();
 
-document.getElementById("birthday").addEventListener("change", function () {
-    const inputDate = new Date(this.value);
-    const today = new Date();
-    const message = document.getElementById("message");
+  clearError();
 
-    const birthMonth = inputDate.getMonth(); // 0-11
-    const birthDay = inputDate.getDate();
-
-    const currentMonth = today.getMonth();
-    const currentDay = today.getDate();
-
-    // current day == birthday
-if (birthMonth === currentMonth && birthDay === currentDay) {
-     message.textContent = "🎈 Hey! It's your birthday today.";
+  if (name === "") {
+    showError("Please enter your name.");
+    return;
   }
 
- else if (birthMonth < currentMonth || (birthMonth === currentMonth && birthDay < currentDay)) {
-    return "🎈 Belated Happy Birthday!";
-  } 
-  else {
-    return "🚀 Advance Happy Birthday!";
-  } 
-//   else if{
-//     return "🚀 Advance Happy Birthday!";
-//   }
-// else if (birthMonth >= currentMonth && birthDay > currentDay) {
-//     message.textContent = "🎈 Advance Happy Birthday!";
-// }
-// else if (
-//     birthMonth < currentMonth ||
-//     (birthMonth === currentMonth && birthDay < currentDay)
-// ) {
-//     message.textContent = "🎂 Belated Happy Birthday!";
-// }
-// else if (
-//     birthMonth > currentMonth ||
-//     (birthMonth === currentMonth && birthDay > currentDay)
-// ) {
-//     message.textContent = "🎉 Your birthday is coming soon!";
-// }
-// else {
-//         message.textContent = "Please enter your birthday.";
-//     }
-});
+  const nameRegex = /^[A-Za-z\s'-]+$/;
+
+  if (!nameRegex.test(name)) {
+    showError("Use letters only (no numbers or symbols).");
+    return;
+  }
+
+  // ✅ SUCCESS
+  console.log("Valid name:", name);
+}
+
+function showError(message) {
+  nameError.textContent = message;
+  nameError.classList.add("active");
+  nameInput.classList.add("error-input");
+}
+
+function clearError() {
+  nameError.textContent = "";
+  nameError.classList.remove("active");
+  nameInput.classList.remove("error-input");
+}
+
+nameInput.addEventListener("input", clearError);
