@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url("src/assets/background.png") center/cover no-repeat;
+  position: relative;
+  color: white;
+}
+
+/* cosmic overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(120, 100, 255, 0.25),
+    rgba(0, 0, 0, 0.88)
+  );
+}
+
+/* center wrapper */
+.container {
+  position: relative;
+}
+
+/* glass card */
+.card {
+  width: 420px;
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  text-align: center;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* eyebrow label */
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* main title */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+
+  background: linear-gradient(90deg, #ffffff, #b9a7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 25px rgba(138, 124, 255, 0.25);
+}
+
+/* subtitle */
+.subtitle {
+  font-size: 0.50rem;
+  opacity: 0.85;
+  margin-bottom: 25px;
+  letter-spacing: 0.3px;
+}
+
+/* form layout */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* inputs */
+input {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(207, 197, 197, 0.15);
+
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #8a7cff;
+  box-shadow: 0 0 10px rgba(138, 124, 255, 0.4);
+}
+
+/* button */
+button {
+  margin-top: 5px;
+  padding: 12px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #232229, #786ccf);
+  color: white;
+
+  font-size: 1rem;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(124, 108, 255, 0.4);
+}
+
+/* stats */
+.stats {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
