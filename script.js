@@ -86,3 +86,13 @@ function clearError(errorElement, inputElement)
 
 nameInput.addEventListener("input", () => clearError(nameError, nameInput));
 birthInput.addEventListener("input", () => clearError(birthError, birthInput));
+
+
+// for interactive mouse
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth) * 100;
+  const y = (e.clientY / window.innerHeight) * 100;
+
+  document.body.style.setProperty("--x", x + "%");
+  document.body.style.setProperty("--y", y + "%");
+});

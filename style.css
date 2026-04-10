@@ -14,6 +14,34 @@ body {
   background: url("src/assets/background.png") center/cover no-repeat;
   position: relative;
   color: white;
+
+  overflow: hidden;
+
+  animation: zoomBg 20s ease-in-out infinite alternate;
+}
+
+/* smooth zoom movement */
+@keyframes zoomBg {
+  from {
+    background-size: 100%;
+  }
+  to {
+    background-size: 110%;
+  }
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(255, 255, 255, 0.15),
+    transparent 60%
+  );
+
+  pointer-events: none;
 }
 
 /* cosmic overlay */
@@ -154,4 +182,15 @@ button:hover {
 input.error-input {
   border-color: #ff6b6b !important;
   box-shadow: 0 0 8px rgba(255, 107, 107, 0.4);
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.card {
+  position: relative;
+  z-index: 10;
 }
