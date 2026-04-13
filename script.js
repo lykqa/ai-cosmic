@@ -5,12 +5,14 @@
 const loadingSection = document.getElementById("loadingSection");
 const resultSection = document.getElementById("resultSection");
 const resultTitle = document.getElementById("resultTitle");
-const resultText = document.getElementById("resultText");
+const message = document.getElementById("message");
 const nameInput = document.getElementById("nameInput");
 const nameError = document.getElementById("nameError");
 const submitBtn = document.getElementById("submitBtn");
 const birthInput = document.getElementById("birthInput");
 const birthError = document.getElementById("birthError");
+const greeting = document.getElementById("greeting");
+const intro = document.getElementById("intro");
 
 // Initialize application state
 loadingSection.classList.add("hidden");
@@ -81,8 +83,9 @@ function handleSubmit() {
     const sign = getZodiacSign(birthdate);
     const data = generateDynamicHoroscope(userName, sign);
 
-    resultTitle.innerHTML = `Hi ${userName}! ${data.intro}`;
-    resultText.textContent = data.message;
+    greeting.textContent = `Hi ${userName}!`;
+    intro.textContent = data.intro;
+    message.textContent = data.message;
   }, 1500); // Artificial delay to simulate "AI processing"
 }
 

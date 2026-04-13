@@ -17,7 +17,7 @@ body {
 
   overflow: hidden;
 
-  animation: zoomBg 20s ease-in-out infinite alternate;
+  animation: zoomBg 7s ease-in-out infinite alternate;
 }
 
 /* smooth zoom movement */
@@ -221,8 +221,32 @@ input.error-input {
   margin-bottom: 10px;
 }
 
-#resultText {
+#message {
   font-size: 0.95rem;
   opacity: 0.85;
-  margin-bottom: 20px;
+  margin: 20px;
+  line-height: 20px;
+  letter-spacing: 0.8;
+}
+
+/* greeting */
+#greeting {
+  
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 5px;
+  opacity: 0.9;
+}
+
+/* intro (main highlight) */
+#intro {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 15px;
+
+  background: linear-gradient(90deg, #ffffff, #b9a7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 20px rgba(138, 124, 255, 0.3);
 }
