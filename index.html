@@ -14,32 +14,39 @@
     </div>
    <div class="container">
 
-    <div class="card">
+    <div class="card" id="mainCard">
 
-      <p class="eyebrow">Your Fate Revealed</p>
+  <!-- FORM SECTION -->
+  <div id="formSection">
+    <p class="eyebrow">Your Fate Revealed</p>
+    <h1>Decode Your Destiny</h1>
+    <p class="subtitle">Powered by AI</p>
 
-      <h1>Decode Your Destiny Today</h1>
+    <div class="form">
+      <input type="text" id="nameInput" placeholder="Your Name" />
+      <p class="error" id="nameError"></p>
 
-      <p class="subtitle">
-        Powered by AI
-      </p>
+      <input type="date" id="birthInput" />
+      <p class="error" id="birthError"></p>
 
-      <div class="form">
-            <input type="text" id="nameInput" placeholder="Your Name" />
-            <p class="error" id="nameError"></p>
-
-            <input type="date" id="birthInput" />
-            <p class="error" id="birthError"></p>
-
-            <button id="submitBtn">Reveal My Reading</button>
-      </div>
-
-
-      <div class="stats">
-        ✨ 12,483 readings generated
-      </div>
-
+      <button id="submitBtn">Reveal My Reading</button>
     </div>
+  </div>
+
+  <!-- LOADING SECTION -->
+  <div id="loadingSection" class="hidden">
+    <p class="loading-text">Consulting the stars...</p>
+  </div>
+
+  <!-- RESULT SECTION -->
+  <div id="resultSection" class="hidden">
+    <h2 id="resultTitle"></h2>
+    <p id="resultText"></p>
+
+    <button onclick="resetApp()">Try Again</button>
+  </div>
+
+</div>
 
   </div>
 

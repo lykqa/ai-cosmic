@@ -194,3 +194,35 @@ input.error-input {
   position: relative;
   z-index: 10;
 }
+
+/* hide sections */
+.hidden {
+  display: none;
+}
+
+/* loading text */
+.loading-text {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  animation: pulse 1.5s infinite;
+}
+
+/* After Reveal button */
+
+/* pulsing effect */
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+/* result */
+#resultSection h2 {
+  margin-bottom: 10px;
+}
+
+#resultText {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
