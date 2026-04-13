@@ -204,9 +204,10 @@ input.error-input {
   font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: 0.5px;
+  font-style: italic;
 
   background: linear-gradient(90deg, #ffffff, #b9a7ff, #ffffff);
-  background-size: 200%;
+  background-size: 100%;
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -90,7 +90,7 @@ function handleSubmit() {
     greeting.textContent = `Hi ${userName}!`;
     intro.textContent = data.intro;
     message.textContent = data.message;
-  }, 1500); // Artificial delay to simulate "AI processing"
+  }, 2000); // Artificial delay to simulate "AI processing"
 }
 
 /**
@@ -208,8 +208,4 @@ function startDots() {
     count = (count + 1) % 4;
     dots.textContent = ".".repeat(count);
   }, 400);
-}
-
-function stopDots() {
-  clearInterval(dotsInterval);
 }
