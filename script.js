@@ -13,6 +13,8 @@ const birthInput = document.getElementById("birthInput");
 const birthError = document.getElementById("birthError");
 const greeting = document.getElementById("greeting");
 const intro = document.getElementById("intro");
+let dotsInterval;
+
 
 // Initialize application state
 loadingSection.classList.add("hidden");
@@ -75,6 +77,8 @@ function handleSubmit() {
   // View State Transition: Form -> Loading -> Result
   document.getElementById("formSection").classList.add("hidden");
   loadingSection.classList.remove("hidden");
+
+  startDots();
 
   setTimeout(() => {
     loadingSection.classList.add("hidden");
@@ -194,4 +198,18 @@ function resetApp() {
   birthInput.value = "";
   clearError(nameError, nameInput);
   clearError(birthError, birthInput);
+}
+
+function startDots() {
+  const dots = document.getElementById("dots");
+  let count = 0;
+
+  dotsInterval = setInterval(() => {
+    count = (count + 1) % 4;
+    dots.textContent = ".".repeat(count);
+  }, 400);
+}
+
+function stopDots() {
+  clearInterval(dotsInterval);
 }
